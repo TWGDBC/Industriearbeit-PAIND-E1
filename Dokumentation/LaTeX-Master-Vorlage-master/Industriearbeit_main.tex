@@ -1,0 +1,68 @@
+\include{Industriearbeit_settings}
+
+%%Titles - Uncomment one section of titles
+
+%%Used for titleGraduation
+\include{titles/titleGraduation}
+\gradeType{Master of Science (M.Sc.)}
+
+
+%%Used for titleResearchPaper
+%\include{titles/titleResearchPaper}
+%\subTitle{Ein optionaler Untertitel der Arbeit}
+%\researchPart{A}
+
+%%Used by all titles
+\title{3D Laserscanner für mobilen Roboter}
+\author{Daniel Zimmermann}
+\matrikelnr{15-465-271}
+\submitDate{22.12.2017}
+\firstExaminer{Björn Jensen}
+\secondExaminer{Markus Thalmann}
+%%End Titles
+
+\makeindex[title=Stichwortverzeichnis, options=-s indexstyle.ist, intoc]
+\indexsetup{level=\chapter*,toclevel=chapter}
+
+\makeglossaries
+\loadglsentries{glossary_and_acronyms.tex}
+\setacronymstyle{long-short}
+
+\begin{document}
+
+\pagenumbering{alph} %fix for same identifier warning, character is not show in title
+\maketitle
+
+\pagenumbering{Roman}
+
+% Eigenständigkeitserklärung
+\input{chapter/Eigenstaendigkeitserklaerung}
+% Vorwort
+\include{chapter/Vorwort} \clearpage
+% Abstract
+\include{chapter/Abstract} \clearpage
+
+\tableofcontents \newpage
+
+\pagenumbering{arabic}
+\input{chapter/Einleitung} \clearpage
+\input{chapter/Beispiele} \clearpage
+
+\pagenumbering{Alph}
+\listoffigures \clearpage
+\listoftables \clearpage
+\lstlistoflistings \clearpage
+
+\printindex \clearpage
+
+\printglossary[title={Glossar}] \clearpage
+\printglossary[style=dottedlocations,type=\acronymtype,title={Abkürzungsverzeichnis}] \clearpage
+
+\printbibliography[heading=bibintoc, keyword={book}, title={Literaturverzeichnis}]\clearpage
+\printbibliography[heading=bibintoc, keyword={online}, title={Onlinequellen}]\clearpage
+\printbibliography[heading=bibintoc, keyword={image}, title={Bildquellen}]\clearpage
+
+% Anhang
+\input{chapter/Anhang}
+
+\end{document}
