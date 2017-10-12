@@ -31,16 +31,24 @@
 
 %Anpassung von Kopf- und Fußzeile
 %beinflusst die erste Seite des Kapitels
-\usepackage[automark,headsepline]{scrlayer-scrpage}
-\automark{chapter}
-\ihead{\leftmark}
-\chead{}
-\ohead{\thepage}
-\ifoot*{}
-\cfoot[\thepage]{}
-\cfoot*{}
-\ofoot*{}
-\pagestyle{scrheadings}
+\usepackage{fancyhdr} 
+\pagestyle{fancy} 
+\fancyhf{} 
+\fancyhead[L]{Text 1} 
+\fancyhead[C]{Text 2} 
+\fancyhead[R]{Email Adresse} 
+\fancyfoot[R]{\thepage} 
+
+\fancypagestyle{Preinhalt}{% 
+	\fancyhf{}% 
+	\fancyhead[L]{Industriearbeit PAIND} 
+	\fancyhead[R]{Hochschule Luzern Technik \& Architektur}
+} 
+\fancypagestyle{ErsteSeite}{% 
+	\fancyhf{}% 
+	\fancyhead[L]{} 
+} 
+
 
 %Auskommentieren für die Verkleinerung des vertikalen Abstandes eines neuen Kapitels
 %\renewcommand*{\chapterheadstartvskip}{\vspace*{.25\baselineskip}}
@@ -70,7 +78,6 @@
 
 %Erlaubt Umbrüche innerhalb von Tabellen
 \usepackage{tabularx}
-
 %Erlaubt Seitenumbrüche mit Tabellen
 \usepackage{longtable}
 
@@ -82,10 +89,8 @@
 
 %Vektorgrafiken
 \usepackage{tikz}
-
 %Grafiken (wie jpg, png, etc.)
 \usepackage{graphicx}
-
 %Grafiken von Text umlaufen lassen
 \usepackage{wrapfig}
 

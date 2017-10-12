@@ -1,0 +1,242 @@
+%%%%%%% EINLEITUNG %%%%%%%
+% Das Lastenheft beschreibt das Grobkonzept eines Projektes aus sicht des Auftraggebers.
+% Es beschreibt lediglich die Basisanforderungen und geht nicht tief ins Detail.
+%
+% In dem Pflichtenheft wird daher vom Projektbearbeiter dargelegt, 
+% wie er die Aufgabenstellung interpretiert und in welchen Schritten er im Detail die Aufgabe abarbeiten möchte.
+% Das Pflichtenheft muss mit dem Auftraggeber (Dozent) abgestimmt werden und
+% gilt danach als verbindliche Grundlage für die Bewertung der in dem Projekt erbrachten Leistungen.
+%
+
+%%%%%%% PRÄAMBEL %%%%%%%
+% Dokumentenklasse
+\documentclass[ngerman,openany, 12pt, a4paper]{scrartcl}
+\usepackage[latin1]{inputenc}
+
+% Pakete
+\usepackage{units}
+\usepackage{tabularx}
+
+% Unterstützung Querformat, PDF-Anfügen, GANT DIAGRAMME
+\usepackage{pdflscape}
+\usepackage{pdfpages}
+\usepackage{pgfgantt}
+\usepackage[bottom=48mm,left=25mm,right=25mm]{geometry}
+
+%Unterstützung von Umlauten und anderen Sonderzeichen (UTF-8)
+\usepackage{lmodern}
+\usepackage[utf8]{luainputenc}
+\usepackage[T1]{fontenc}
+
+%Vektorgrafiken
+\usepackage{tikz}
+%Grafiken (wie jpg, png, etc.)
+\usepackage{graphicx}
+
+\usepackage[bottom=48mm,left=25mm,right=25mm]{geometry}
+
+%Zeilenabstand 1,5
+\usepackage[onehalfspacing]{setspace}
+
+%Erlaubt Umbrüche innerhalb von Tabellen
+\usepackage{tabularx}
+%Erlaubt Seitenumbrüche mit Tabellen
+\usepackage{longtable}
+ 
+% Titel
+\makeatletter
+\newcommand*{\firstExaminer}[1]{\gdef\@firstExaminer{#1}}
+\newcommand*{\secondExaminer}[1]{\gdef\@secondExaminer{#1}}
+\newcommand*{\matrikelnr}[1]{\gdef\@matrikelnr{#1}}
+\newcommand*{\submitDate}[1]{\gdef\@submitDate{#1}}
+\title{Pflichtenheft \\ Industriearbeit PAIND}
+\subtitle{3D-Laserscanner für mobilen Roboter}
+\date{06.10.2017}
+%%Used by all titles
+\title{3D Laserscanner für mobilen Roboter}
+\author{Daniel Zimmermann}
+\matrikelnr{15-465-271}
+\firstExaminer{Björn Jensen}
+\secondExaminer{Markus Thalmann}
+
+
+
+
+
+
+
+%%%%%%% DOKUMENT %%%%%%%
+\begin{document}
+	\begin{titlepage}
+	\newgeometry{left=2.5cm,right=2.5cm,top=5.0cm,bottom=2.5cm}
+	\begin{center}
+		\vfill
+		{\huge Pflichtenheft}
+		\vskip 0.5cm
+		{\large \bfseries 3D Laserscanner für mobilen Roboter \\
+			Industriearbeit PAIND+E1\par}
+		\vskip 0.5cm
+		\vskip 0.5cm
+		{\large im Auftrag des Industriepartners}
+		\vskip 0.5cm	
+		{\large \bfseries RUAG AG\par}
+		\vskip 0.5cm
+		{\large an der}
+		\vskip 0.5cm
+		{\large Hochschule Luzern Technik \& Architektur}
+		\vskip 0.5cm
+		{\large im Studiengang}
+		{\large Elektrotechnik}
+		\vskip 0.5cm
+		{\large \textbf{Schwerpunkt} \\ Signalverarbeitung \& Kommunikation, \\ Automation \& Embedded Systems}
+		\vfill
+		\begin{flushleft}
+			\begin{tabular}[t]{rl}
+				\textbf{Dozent}: &\@firstExaminer\\
+				\textbf{Experte:} & \@secondExaminer\\
+				\textbf{Erstellt von:} &\@author\\
+				\textbf{Matrikelnummer:} & \@matrikelnr\\
+				\textbf{Klassifikation:} & Rücksprache \\
+			\end{tabular}
+		\vskip 1.5cm
+		\includegraphics[width=1\textwidth]{bilder/Pflichtenheft_0.PNG}
+		\end{flushleft}
+	\end{center}
+	\restoregeometry
+\end{titlepage}
+
+\section{Projektziel}
+% Hier soll das Ziel des Projektes in eigenen Worten beschrieben werden.
+% Dabei sollte auf die Bedeutung und den Nutzen des Projektergebnisses eingegangen werden.
+
+Ziel des Projektes ist es die Realisierung eines 3D-Laser Moduls. In erster Priorität soll damit 3D Mapping in Echtzeit betrieben werden können. Zweite Priorität ist die Hinderniserkennung in Frontrichtung. Dazu muss in Front Richtung eine detaillierte Punktwolke ermittelt werden können. Das Modul soll einerseits auf dem Packbot nutzbar, sowie auch eigenständig einsetzbar sein.
+
+\section{Anforderungen}
+% Hier sollen die Anforderungen an das Projektergebnis beschrieben werden. 
+% Es soll zwischen unbedingt erforderlichen Muss-Anforderungen und optionalen Kann-Anforderungen unterschieden werden.
+In nächsten Abschnitt werden die Anforderungen beschrieben. Dabei werden diese in drei Kriterien unterteilt, welche mit folgenden Kürzeln definiert sind:
+
+\begin{itemize}
+	% Hier soll eine vollständige und nachprüfbare Beschreibung einer Anforderung an das Projektergebnis beschrieben werden.
+	\item F: Festanforderung 
+	\item M: Mindestanforderung
+	\item W: Wunschanforderung
+\end{itemize}
+
+Neben den Kriterien wurden die Anforderungen zusätzlich in Themengebiete unterteilt, welche in den folgenden Unterkapiteln erläutert werden.
+
+\subsection{Allgemeine Anforderungen}
+
+\includegraphics[width=1\textwidth]{bilder/Pflichtenheft_1.PNG}
+
+\subsection{Ressourcen}
+
+\includegraphics[width=1\textwidth]{bilder/Pflichtenheft_2.PNG}
+
+\subsection{Projektanforderungen}
+
+\includegraphics[width=1\textwidth]{bilder/Pflichtenheft_3.PNG}
+
+\subsection{Produktanforderungen}
+
+\includegraphics[width=1\textwidth]{bilder/Pflichtenheft_4.PNG}
+
+\subsection{Dokumentation und Poster}
+
+\includegraphics[width=1\textwidth]{bilder/Pflichtenheft_5.PNG}
+
+
+
+\section{Projektphasen}
+
+Nachfolgend werden die einzelnen Projektphasen erläutert. Sie geben Auskunft, wielange man mittels den angegebenen Arbeitsmitteln an der Phase tätig sein soll und welche Ergebnisse daraus entspringen sollten. 
+
+\subsection{Initialisierung \& Projektplanung}
+\label{sec:init}
+Dieses Abschnitt umfasst die administrativen Aufgaben, welche für die Projektplanung und Projektdurchführung nötig sind. Sie sollen möglichst als Vorbereitung dienen.\\
+
+\begin{tabularx}{\textwidth}{|l|X|}
+\firsthline
+Aufwand & \unit[12]{h} \\\hline
+Personen & Daniel Zimmermann \\\hline
+Arbeitsmittel & Lastenheft, Vorlage, Literatur \\\hline
+Ergebnisse & Pflichtenheft, Backup-Möglichkeit, Detaillierter Projektplan, Grobplanung, Meilensteine  Anforderungsliste, Risikoanalyse \\\lasthline
+\end{tabularx}
+
+\subsection{Informationsbeschaffung}
+\label{sec:info}
+Diese Projektphase umfasst die Recherche nach geeigneten Komponenten, Implementierungsmöglichkeiten auf Mikrocontrollern oder Computer, sowie der Analyse von der bestehenden Hardware. Es wird ein sehr breites Themenfeld analysiert, um den Umfang des Produkts kennen zu lernen. Sie dient als Wissenserarbeitung für die Konzeptionsphase. \\
+\begin{tabularx}{\textwidth}{|l|X|}
+\firsthline
+Aufwand & \unit[25]{h} \\\hline
+Personen & Daniel Zimmermann \\\hline
+Arbeitsmittel & Literatur, Vorlesungsfolien, Internet \\\hline
+Ergebnisse & Stichpunktliste mit Realisierungsmöglichkeiten, Ordner mit relevanten Unterlagen, Grobkonzept für Hard- und Software, übersichtliches Mindmap \\\lasthline
+\end{tabularx}
+
+\subsection{Konzeptionsphase}
+\label{sec:Konzeptphase}
+Dieses Phase umfasst den Entwurf der Hardware und der Software für das 3D-Laser Modul. Es werden die benötigten Bauteile ausgewählt, dimensioniert und der Schaltplan des Gerätes erstellt. Die Software wird in einzelne Module aufgeteilt und die Schnittstellen zwischen den Modulen werden definiert. Der Programmablauf wird entworfen und geeignete Algorithmen für die Signalanalyse ausgewählt.\\
+\begin{tabularx}{\textwidth}{|l|X|}
+\firsthline
+Aufwand & \unit[30]{h} \\\hline
+Personen & Daniel Zimmermann \\\hline
+Arbeitsmittel & Ergebnisse von \ref{sec:info} \\\hline
+Ergebnisse & Schaltplan des Gerätes, Bauteilliste, Platinenlayouts, CAD-Zeichnungen, Konzpet-Modell \\\lasthline
+\end{tabularx}
+
+\subsection{Realisierungsphase}
+\label{sec:real}
+Diese Phase umfasst den Einkauf der effektiven Bauteile, die Erstellung der Hardware, das Implementieren der Software sowie der Integration von Software und Hardware \\
+\begin{tabularx}{\textwidth}{|l|X|}
+\firsthline
+Aufwand & \unit[50]{h} \\\hline
+Personen & Daniel Zimmermann \\\hline
+Arbeitsmittel & Ergebnisse von \ref{sec:info} und \ref{sec:Konzeptphase} \\\hline
+Ergebnisse &  komplettes Produkt zum Test bereit\\\lasthline
+\end{tabularx}
+
+\subsection{Testphase}
+\label{sec:test}
+Dieses Arbeitspaket umfasst den Test der entwickelten Hard- und Software.
+Es wird zunächst die mechanischen Tests durchgeführt, danach  werden softwaresetige Tests getätigt.
+Anschließend findet der Test auf dem Packbot statt. Es umfasst auch die Behebung der festgestellten Mängel. \\
+\begin{tabularx}{\textwidth}{|l|X|}
+\firsthline
+Aufwand & \unit[20]{h} \\\hline
+Personen & Daniel Zimmermann\\\hline
+Arbeitsmittel & Ergebnisse von \ref{sec:real}, Laborgeräte, Packbot\\\hline
+Ergebnisse & Dokumentation der Testergebnisse, Fehlerbereinigte Hard-/Software, Liste der verbleibenden Mängel \\\lasthline
+\end{tabularx}
+
+
+\subsection{Dokumentation}
+\label{sec:doku}
+Dieses Arbeitspaket umfasst die gesamte Erstellung der Projektdokumentation. Das beinhaltet die gesamten Vorgaben, welche in den Anforderungen protokolliert sind. Es werden Ergebnisse aus den verschiedenen Phasen detailliert präsentiert und entsprechende Erläuterungen zu Problemstellungen und Vorgehensweisen gemacht. \\
+\begin{tabularx}{\textwidth}{|l|X|}
+\firsthline
+Aufwand & \unit[60]{h} \\\hline
+Personen & Daniel Zimmermann \\\hline
+Arbeitsmittel & Latex, Word, Excel \\\hline
+Ergebnisse & Projektdokumentation, Projektmanagement, Schlussbericht,  \\\lasthline
+\end{tabularx}
+
+\subsection{Präsentation \& Poster}
+\label{sec:PPP}
+Dieses Arbeitspaket beinhaltet das Erstellen der Zwischenpräsentation, Abschlusspräsentation und des Posters. Diese  \\
+\begin{tabularx}{\textwidth}{|l|X|}
+	\firsthline
+	Aufwand & \unit[10]{h} \\\hline
+	Personen & Daniel Zimmermann \\\hline
+	Arbeitsmittel & Powerpoint, Bericht \\\hline
+	Ergebnisse & Zwischenpräsentation, Abschlusspräsentation, Poster  \\\lasthline
+\end{tabularx}
+
+
+\vfill
+\includegraphics[width=1 \textwidth]{bilder/Pflichtenheft_6.PNG}
+
+
+\end{document}
+
+

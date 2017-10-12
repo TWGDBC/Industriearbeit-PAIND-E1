@@ -8,12 +8,13 @@
 
 \renewcommand*{\maketitle}{
 	\begin{titlepage}
-		\newgeometry{left=2.5cm,right=2.5cm,top=7.0cm,bottom=2.5cm}
+		\newgeometry{left=2.5cm,right=2.5cm,top=6.0cm,bottom=2.5cm}
 		\begin{center}
 			\vfill
-			{\Large \@title\par}
+			{\huge \@title\par}
 			\vskip 0.5cm
 			{\large \bfseries Industriearbeit PAIND+E1\par}
+			\vskip 0.5cm
 			\vskip 0.5cm
 			{\large im Auftrag des Industriepartners}
 			\vskip 0.5cm	
@@ -26,15 +27,16 @@
 			{\large im Studiengang}
 			{\large Elektrotechnik}
 			\vskip 0.5cm
-			{\large Schwerpunkt \\ Signalverarbeitung \& Kommunikation, \\ Automation \& Embedded Systems}
+			{\large \textbf{Schwerpunkt} \\ Signalverarbeitung \& Kommunikation, \\ Automation \& Embedded Systems}
 			\vfill
 			\begin{flushleft}
 				\begin{tabular}[t]{rl}
-					Dozent: &\@firstExaminer\\
-					Experte: & \@secondExaminer\\
-					Eingereicht von: &\@author\\
-					Matrikelnummer: & \@matrikelnr\\
-					Datum der Abgabe: & \@submitDate
+					\textbf{Dozent}: &\@firstExaminer\\
+					\textbf{Experte:} & \@secondExaminer\\
+					\textbf{Eingereicht von:} &\@author\\
+					\textbf{Matrikelnummer:} & \@matrikelnr\\
+					\textbf{Datum der Abgabe:} & \@submitDate\\
+					\textbf{Klassifikation:} & Rücksprache 
 				\end{tabular}
 			\end{flushleft}
 		\end{center}
